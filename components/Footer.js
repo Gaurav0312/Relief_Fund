@@ -22,7 +22,6 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
-
 import Link from "next/link";
 
 const Footer = () => {
@@ -189,30 +188,55 @@ const Footer = () => {
           className="mt-12 pt-8 border-t border-gray-200"
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            {/* Social Media */}
-            <div className="flex items-center gap-4">
-              <span className="text-gray-600 font-medium">Follow us:</span>
-              <div className="flex gap-3">
-                {[
-                  { icon: FaFacebook, color: "hover:text-blue-600" },
-                  { icon: FaTwitter, color: "hover:text-blue-400" },
-                  { icon: FaInstagram, color: "hover:text-pink-600" },
-                  { icon: FaWhatsapp, color: "hover:text-green-600" },
-                  { icon: FaLinkedin, color: "hover:text-blue-700" },
-                ].map(({ icon: Icon, color }, index) => (
-                  <motion.a
-                    key={index}
-                    href="#"
-                    whileHover={{ scale: 1.1 }}
-                    className={`bg-white/80 backdrop-blur-sm rounded-lg p-2 shadow-sm border border-gray-200 text-gray-600 ${color} transition-all duration-200`}
+            {/* LEFT SIDE */}
+            <div className="flex flex-col items-start gap-4">
+              {/* Social Media */}
+              <div className="flex items-center gap-4">
+                <span className="text-gray-600 font-medium">Follow us:</span>
+
+                <div className="flex gap-3">
+                  {[
+                    { icon: FaFacebook, color: "hover:text-blue-600" },
+                    { icon: FaTwitter, color: "hover:text-blue-400" },
+                    { icon: FaInstagram, color: "hover:text-pink-600" },
+                    { icon: FaWhatsapp, color: "hover:text-green-600" },
+                    { icon: FaLinkedin, color: "hover:text-blue-700", link: "https://www.linkedin.com/in/gaurav0312" }
+                  ].map(({ icon: Icon, color, link }, index) => (
+                    <motion.a
+                      key={index}
+                      href={link}
+                      whileHover={{ scale: 1.1 }}
+                      className={`bg-white/80 backdrop-blur-sm rounded-lg p-2 shadow-sm border border-gray-200 text-gray-600 ${color} transition-all duration-200`}
+                    >
+                      <Icon className="w-5 h-5" />
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
+
+              {/* LinkedIn Badge */}
+              <div className="bg-white/80 p-4 rounded-xl shadow-sm border border-gray-200">
+                <div
+                  className="badge-base LI-profile-badge"
+                  data-locale="en_US"
+                  data-size="medium"
+                  data-theme="light"
+                  data-type="VERTICAL"
+                  data-vanity="gaurav0312"
+                  data-version="v1"
+                >
+                  <a
+                    className="badge-base__link LI-simple-link"
+                    href="https://www.linkedin.com/in/gaurav0312"
+                    target="_blank"
                   >
-                    <Icon className="w-5 h-5" />
-                  </motion.a>
-                ))}
+                    View My LinkedIn Profile
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* Quick Stats */}
+            {/* RIGHT SIDE - Stats */}
             <div className="flex items-center gap-6 text-sm">
               <div className="text-center">
                 <div className="font-bold text-blue-600">50K+</div>
