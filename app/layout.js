@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <SessionWrapper>
-          <ScrollRestoration /> {/* ✅ Handles scroll logic */}
+          <ScrollRestoration />
           {children}
           <Footer />
         </SessionWrapper>
