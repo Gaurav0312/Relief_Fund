@@ -1,6 +1,8 @@
+// app/layout.js (SERVER COMPONENT ✅)
 import "./globals.css";
 import Footer from "@/components/Footer";
 import SessionWrapper from "@/components/SessionWrapper";
+import ScrollRestoration from "@/components/ScrollRestoration";
 
 export const metadata = {
   title: "DisasterRelief - Crowdfunding Platform",
@@ -12,11 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
@@ -24,6 +22,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <SessionWrapper>
+          <ScrollRestoration /> {/* ✅ Handles scroll logic */}
           {children}
           <Footer />
         </SessionWrapper>
